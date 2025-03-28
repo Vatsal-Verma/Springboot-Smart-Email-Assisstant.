@@ -40,7 +40,7 @@ public class EmailGeneratorService {
         try {
             // Do request and get response
              response = webClient.post()
-                    .uri("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBhNR0cUDZVe5O7BDPYayF13wXqnYvDpGo")
+                    .uri(geminiApiUrl + geminiApiKey)
                     .header("Content-Type", "application/json")
                     .bodyValue(requestBody)
                     .retrieve()
