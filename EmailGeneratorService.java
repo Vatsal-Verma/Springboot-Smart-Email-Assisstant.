@@ -24,7 +24,7 @@ public class EmailGeneratorService {
     }
 
     public String generateEmailReply(EmailRequest emailRequest) {
-        // Build the prompt
+      
         String prompt = buildPrompt(emailRequest);
 
         // Craft a request
@@ -38,7 +38,7 @@ public class EmailGeneratorService {
 
         String response;
         try {
-            // Do request and get response
+            
              response = webClient.post()
                     .uri(geminiApiUrl + geminiApiKey)
                     .header("Content-Type", "application/json")
@@ -51,7 +51,7 @@ public class EmailGeneratorService {
             return e.getMessage();
         }
 
-        // Extract Response and Return
+        
         return extractResponseContent(response);
     }
 
